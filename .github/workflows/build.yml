@@ -42,4 +42,8 @@ jobs:
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          gh release create "$RELEASE_TAG" artifacts/src/Emby.EpgImages/bin/Release/net8.0/Emby.EpgImages.dll --title "Live TV Images $RELEASE_TAG" --prerelease --generate-notes
+          if ! gh release view "$RELEASE_TAG" > /dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --title "Live TV Images $RELEASE_TAG" --prerelease --generate-notes
+          fi
+          gh release upload "$RELEASE_TAG" artifacts/src/Emby.EpgImages/bin/Release/net8.0/Emby.EpgImages.dll --clobber
+

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <Version>0.4.0</Version>
+    <AssemblyName>Emby.EpgImages</AssemblyName>
+    <RepositoryUrl>https://github.com/softwarecrash/emby-live-tv-images</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MediaBrowser.Server.Core" Version="4.10.0.24-beta2" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="settings.html" />
+    <EmbeddedResource Include="settings.js" />
+    <EmbeddedResource Include="thumb.png" />
+  </ItemGroup>
+</Project>

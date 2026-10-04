@@ -1,0 +1,15 @@
+<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-horizontal="false" data-forcescrollbar="true" data-centerfocus="true" data-bindheader="true" data-controller="__plugin/epgimagesjs" data-title="Live TV Images (TMDB/TVDB)">
+<div class="scrollSlider flex-grow flex-direction-column padded-left padded-left-page padded-right padded-top-page padded-bottom-page">
+<form class="auto-center">
+<h2>Live TV Images (TMDB/TVDB)</h2>
+<p>Adds missing movie and series images to the TV guide.</p>
+<p>Requires TheMovieDb. TheTVDB is also required when the series fallback is enabled. Providers are checked before each run.</p>
+<div class="checkboxContainer"><label><input is="emby-checkbox" type="checkbox" id="Enabled"><span>Enable</span></label></div>
+<div class="checkboxContainer"><label><input is="emby-checkbox" type="checkbox" id="UseTvdbFallback"><span>Use TVDB as a fallback for series</span></label></div>
+<div class="checkboxContainer"><label><input is="emby-checkbox" type="checkbox" id="RunAfterGuide"><span>Run automatically after guide refresh</span></label></div>
+<div class="inputContainer"><input is="emby-input" id="MaxPrograms" type="number" min="1" max="200" label="New titles per run" required></div>
+<p>Runs every five minutes and after guide refresh. Each batch searches new titles; cached matches are reused for all matching programmes. Unused matches expire after seven days; the cache is limited to 5,000 titles.</p>
+<p id="LastResult" style="overflow-wrap:anywhere"></p>
+<button is="emby-button" type="submit" class="raised button-submit block"><span>Save</span></button>
+<p>Run manually from Scheduled Tasks → Live TV → Update Live TV Images.</p>
+</form></div></div>
